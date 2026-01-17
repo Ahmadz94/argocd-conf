@@ -21,6 +21,7 @@ spec:
       name: demo-crm-demo-crm
       jsonPointers:
         - /status
+        - /spec/rules
   syncPolicy:
     automated:
       prune: true
