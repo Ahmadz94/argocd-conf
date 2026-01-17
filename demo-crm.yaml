@@ -15,9 +15,17 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+  ignoreDifferences:
+    - group: networking.k8s.io
+      kind: Ingress
+      name: demo-crmv4-demo-crm
+      jsonPointers:
+        - /status
+        - /metadata/annotations
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
