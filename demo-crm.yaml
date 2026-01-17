@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-crmv4
+  name: demo-crm
   namespace: argocd
 spec:
   project: default
@@ -18,11 +18,9 @@ spec:
   ignoreDifferences:
     - group: networking.k8s.io
       kind: Ingress
-      name: demo-crmv4-demo-crm
+      name: demo-crm-demo-crm
       jsonPointers:
         - /status
-        - /metadata/annotations
-        - /spec/rules
   syncPolicy:
     automated:
       prune: true

@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Ahmadz94/argocd-conf.git
     targetRevision: master
-    path: infra
+    path: argo/infra-apps
     directory:
       recurse: true
   destination:
