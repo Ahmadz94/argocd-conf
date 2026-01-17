@@ -19,11 +19,19 @@ spec:
       jsonPointers:
         - /status
         - /metadata/annotations
+        - /metadata/managedFields
     - group: apiextensions.k8s.io
       kind: CustomResourceDefinition
       jsonPointers:
         - /status
         - /metadata/annotations
+        - /metadata/managedFields
+    - group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      jsonPointers:
+        - /status
+        - /metadata/annotations
+        - /metadata/managedFields
   syncPolicy:
     automated:
       prune: true
