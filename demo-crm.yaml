@@ -7,8 +7,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Ahmadz94/demo-crm-chart.git
-    targetRevision: main
-    path: demo-crm
+    targetRevision: master
+    path: .
     helm:
       valueFiles:
         - values.yaml
@@ -19,3 +19,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
