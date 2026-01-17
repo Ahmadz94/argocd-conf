@@ -12,6 +12,18 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
+  ignoreDifferences:
+    - group: ""
+      kind: Service
+      name: nginx-ingress-controller
+      jsonPointers:
+        - /status
+        - /metadata/annotations
+    - group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      jsonPointers:
+        - /status
+        - /metadata/annotations
   syncPolicy:
     automated:
       prune: true
