@@ -20,6 +20,13 @@ spec:
         - /status
         - /metadata/annotations
         - /metadata/managedFields
+    - group: coordination.k8s.io
+      kind: Lease
+      name: nginx-ingress-leader-election
+      namespace: ingress-nginx
+      jsonPointers:
+        - /metadata
+        - /spec
     - group: apiextensions.k8s.io
       kind: CustomResourceDefinition
       jsonPointers:
@@ -38,3 +45,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
+
